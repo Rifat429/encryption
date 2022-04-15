@@ -1,0 +1,7 @@
+.signout {
+  font-size: 10px;
+}
+.signout:hover {
+  cursor: pointer;
+  background-color: rgba(112, 80, 80, 0.233);
+}

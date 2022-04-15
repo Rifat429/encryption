@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <link rel="stylesheet" href="../css/message.css" />
+
+    <title>Message</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-wrapper">
+        <a id="signout" class="brand-logo right signout" onclick="signout()"
+          >logout</a
+        >
+        <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <li><a id="userName" href="./message.html"></a></li>
+          <li><a href="inbox.html">inbox</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <main></main>
+
+    <!-- my scripts -->
+    <script type="module" src="../js/firebase.config.js"></script>
+    <script src="../js/index.js"></script>
+  </body>
+</html>
