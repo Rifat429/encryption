@@ -69,11 +69,11 @@ const encrypt = (str, n) => {
   return encrypt(data, n-1)
 }
 
-const decrypt = (str, n) => {
+const decrypt = (str, n, key) => {
   console.log("decrypt level - ", n, str)
   if(!n) return str;
-  const data = CryptoJS.AES.decrypt(str, myMail).toString(CryptoJS.enc.Utf8);
-  return decrypt(data, n-1)
+  const data = CryptoJS.AES.decrypt(str, key).toString(CryptoJS.enc.Utf8);
+  return decrypt(data, n-1, key)
 }
 
 const sendMessage = (message, prev) => {
@@ -146,10 +146,14 @@ elMessageContainer.appendChild(elMsgAndAvatar)
 
 const loadMsg = (msgList) => {
   msgList.map((msg) =>{
+    console.log("the message", msg.message)
     if(msg.email === myMail)elMessageContainer.classList.add('self');
-    console.log(msg.message)
+    
+    // console.log(msg.message)
     elName.innerText = msg.userName;
-    elMessage.innerText = decrypt(msg.message,3);
+    const dec = decrypt(msg.message,3, msg.email)
+    console.log(dec);
+    elMessage.innerText = dec;
     elMessageList.appendChild(elMessageContainer.cloneNode(true))
   })
 }
@@ -174,7 +178,7 @@ form.addEventListener('submit', async (e) => {
   sendMessage(elMessageText.value, list);
   elName.innerText = dpName;
   elMessage.innerText = elMessageText.value;
-  elMessageContainer.classList.add('self')
+  // elMessageContainer.classList.add('self')
   elMessageList.appendChild(elMessageContainer.cloneNode(true))
   elMessageText.value = '';
 })
