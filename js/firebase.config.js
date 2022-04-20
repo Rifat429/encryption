@@ -1,6 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
 import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword, updateProfile } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+// import { crypto } from "https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js";
+
 const firebaseConfig = {
     apiKey: "AIzaSyCjRzrZ3klLEhpFcjDqveeLB8_Md1O2TP8",
     authDomain: "emessage-5616e.firebaseapp.com",
@@ -17,6 +19,11 @@ const app = initializeApp(firebaseConfig);
 
 const db = getDatabase(app);
 
+
+
+
+
+
 // auth
 const auth = getAuth()
 window.auth = auth;
@@ -26,4 +33,7 @@ window.signInWithEmailAndPassword = signInWithEmailAndPassword;
 window.db = db;
 window.ref = ref;
 window.set = set;
+window.get = get; 
+window.child = child; 
+
 
