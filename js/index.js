@@ -179,6 +179,5 @@ form.addEventListener('submit', async (e) => {
   elMessageContainer.classList.add('self')
   elMessageList.appendChild(elMessageContainer.cloneNode(true))
   elMessageText.value = '';
-  location.reload();
 })
 
