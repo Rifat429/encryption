@@ -146,15 +146,13 @@ elMessageContainer.appendChild(elMsgAndAvatar)
 
 const loadMsg = (msgList) => {
   msgList.map((msg) =>{
-    console.log("the message", msg.message)
     if(msg.email === myMail)elMessageContainer.classList.add('self');
-    
+    else elMessageContainer.classList.remove('self');
     // console.log(msg.message)
     elName.innerText = msg.userName;
     const dec = decrypt(msg.message,3, msg.email)
-    console.log(dec);
     elMessage.innerText = dec;
-    elMessageList.appendChild(elMessageContainer.cloneNode(true))
+    elMessageList.appendChild(elMessageContainer.cloneNode(true));
   })
 }
 
