@@ -176,7 +176,7 @@ form.addEventListener('submit', async (e) => {
   sendMessage(elMessageText.value, list);
   elName.innerText = dpName;
   elMessage.innerText = elMessageText.value;
-  // elMessageContainer.classList.add('self')
+  elMessageContainer.classList.add('self')
   elMessageList.appendChild(elMessageContainer.cloneNode(true))
   elMessageText.value = '';
 })
